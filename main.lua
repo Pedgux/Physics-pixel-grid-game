@@ -123,12 +123,18 @@ function love.update(dt)
             elseif grid[row+1][column] == 0 then  -- If the cell below is empty
               grid[row+1][column] = 1  -- Move the sand down
               grid[row][column] = 0
+            elseif grid[row+1][column-1] == 0 then -- If the cell to the bottom left is empty
+              -- Move the sand left-down
+            elseif grid[row+1][column+1] == 0 then -- If the cell to the bottom right is empty
+              -- Move the sand right-down
+            else -- If nothing is possible
+              -- Keep the sand in place
             end
           end
         end
       end
     end
-  --TODO: SIDEWAYS SAND STUFF
+      --TODO: SIDEWAYS SAND STUFF
   
 
     --mouse position
